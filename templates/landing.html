@@ -6,62 +6,80 @@
 
 <section class="hero">
     <div class="hero-inner">
-        <div class="hero-badge">Personal Finance Tracker</div>
-        <h1 class="hero-title">
-            Know where your<br>
-            <em>money goes</em>
-        </h1>
+        <div class="hero-badge"><span class="badge-dot"></span>Free to use · No credit card needed</div>
+        <h1 class="hero-title">Track every rupee.<br><span class="hero-title-accent">Know where it goes.</span></h1>
         <p class="hero-subtitle">
-            Log expenses, understand your spending patterns,
-            and take control of your financial life —
-            one transaction at a time.
+            Spendly helps you log expenses, spot patterns, and stay on budget —
+            without the spreadsheet headache.
         </p>
         <div class="hero-actions">
-            <a href="{{ url_for('register') }}" class="btn-primary">Start tracking free</a>
-            <a href="{{ url_for('login') }}" class="btn-ghost">Sign in</a>
+            <a href="{{ url_for('register') }}" class="btn-primary btn-lg">Create free account</a>
+            <button type="button" class="btn-primary btn-lg" data-video-open>See how it works</button>
         </div>
     </div>
-    <div class="hero-visual">
-        <div class="mock-card">
-            <div class="mock-card-header">
-                <span class="mock-label">March 2026</span>
-                <span class="mock-total">₹12,450</span>
+
+    <div class="hero-window">
+        <div class="window-bar">
+            <span class="window-dot dot-red"></span>
+            <span class="window-dot dot-yellow"></span>
+            <span class="window-dot dot-green"></span>
+        </div>
+        <div class="window-body">
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-label">This month</span>
+                    <span class="stat-value">₹18,240</span>
+                    <span class="stat-note stat-note-up">+12% vs last</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Budget left</span>
+                    <span class="stat-value">₹6,760</span>
+                    <span class="stat-note">43% remaining</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Transactions</span>
+                    <span class="stat-value">34</span>
+                    <span class="stat-note stat-note-muted">this month</span>
+                </div>
             </div>
-            <div class="mock-bars">
-                <div class="mock-bar-row">
-                    <span class="mock-cat">Bills</span>
-                    <div class="mock-bar-track">
-                        <div class="mock-bar" style="width: 72%"></div>
-                    </div>
-                    <span class="mock-amt">₹4,500</span>
+            <div class="window-panel">
+                <div class="panel-header">
+                    <span class="mock-label">Spending by category</span>
+                    <span class="panel-total">₹18,240</span>
                 </div>
-                <div class="mock-bar-row">
-                    <span class="mock-cat">Food</span>
-                    <div class="mock-bar-track">
-                        <div class="mock-bar mock-bar-2" style="width: 52%"></div>
+                <div class="mock-bars">
+                    <div class="mock-bar-row">
+                        <span class="mock-cat">Bills</span>
+                        <div class="mock-bar-track"><div class="mock-bar" style="width: 100%"></div></div>
+                        <span class="mock-amt">₹6,400</span>
                     </div>
-                    <span class="mock-amt">₹3,200</span>
-                </div>
-                <div class="mock-bar-row">
-                    <span class="mock-cat">Health</span>
-                    <div class="mock-bar-track">
-                        <div class="mock-bar mock-bar-3" style="width: 33%"></div>
+                    <div class="mock-bar-row">
+                        <span class="mock-cat">Food</span>
+                        <div class="mock-bar-track"><div class="mock-bar mock-bar-2" style="width: 76%"></div></div>
+                        <span class="mock-amt">₹4,850</span>
                     </div>
-                    <span class="mock-amt">₹2,050</span>
-                </div>
-                <div class="mock-bar-row">
-                    <span class="mock-cat">Transport</span>
-                    <div class="mock-bar-track">
-                        <div class="mock-bar mock-bar-4" style="width: 28%"></div>
+                    <div class="mock-bar-row">
+                        <span class="mock-cat">Health</span>
+                        <div class="mock-bar-track"><div class="mock-bar mock-bar-3" style="width: 50%"></div></div>
+                        <span class="mock-amt">₹3,190</span>
                     </div>
-                    <span class="mock-amt">₹1,800</span>
+                    <div class="mock-bar-row">
+                        <span class="mock-cat">Transport</span>
+                        <div class="mock-bar-track"><div class="mock-bar mock-bar-4" style="width: 41%"></div></div>
+                        <span class="mock-amt">₹2,600</span>
+                    </div>
+                    <div class="mock-bar-row">
+                        <span class="mock-cat">Shopping</span>
+                        <div class="mock-bar-track"><div class="mock-bar mock-bar-5" style="width: 19%"></div></div>
+                        <span class="mock-amt">₹1,200</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="features">
+<section class="features" id="features">
     <div class="features-inner">
         <div class="feature-card">
             <div class="feature-icon">₹</div>
@@ -89,4 +107,47 @@
     </div>
 </section>
 
+<dialog class="video-modal" id="video-modal" aria-labelledby="video-modal-title">
+    <div class="video-modal-header">
+        <h2 class="video-modal-title" id="video-modal-title">How Spendly works</h2>
+        <button type="button" class="video-modal-close" data-video-close aria-label="Close video">×</button>
+    </div>
+    <div class="video-frame">
+        <iframe
+            data-src="https://www.youtube-nocookie.com/embed/-Lt-ntUDj-g?list=PLKnIA16_RmvaYH3poI0oJvbDF4zEvpq8W&autoplay=1&rel=0"
+            title="How Spendly works"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+    </div>
+</dialog>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    (function () {
+        const modal = document.getElementById("video-modal");
+        const iframe = modal.querySelector("iframe");
+
+        function openModal() {
+            // Load the video only when opened, so it doesn't slow down the page
+            iframe.src = iframe.dataset.src;
+            modal.showModal();
+        }
+
+        document.querySelector("[data-video-open]").addEventListener("click", openModal);
+        modal.querySelector("[data-video-close]").addEventListener("click", () => modal.close());
+
+        // Clicking the dark backdrop closes the modal
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) modal.close();
+        });
+
+        // Stop playback whenever the modal closes (button, backdrop or Esc)
+        modal.addEventListener("close", () => {
+            iframe.src = "";
+        });
+    })();
+</script>
 {% endblock %}
